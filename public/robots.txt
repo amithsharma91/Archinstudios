@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /projects
+Allow: /projects/residential
+Allow: /projects/interior
+Allow: /projects/renovation
+Allow: /projects/convention-halls
+Allow: /projects/commercial
+Allow: /projects/industrial
+Allow: /reviews
+Allow: /credentials
+Allow: /contact
+Disallow: /services
+
+Sitemap: https://archinstudios.in/sitemap.xml
