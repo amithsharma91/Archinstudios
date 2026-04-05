@@ -16,8 +16,8 @@ export default function Hero() {
           alt="Architecture Projects"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-archin-navy/90 via-archin-navy/70 to-archin-navy/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-archin-black via-transparent to-archin-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-archin-navy/85 via-archin-navy/60 to-archin-navy/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-archin-black/80 via-transparent to-archin-black/25" />
       </div>
 
       {/* Content */}
