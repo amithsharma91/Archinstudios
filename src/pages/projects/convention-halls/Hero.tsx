@@ -13,12 +13,12 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://readdy.ai/api/search-image?query=grand%20convention%20hall%20interior%20dramatic%20lighting%20high%20ceiling%20elegant%20architecture%20large%20event%20space%20ballroom%20dark%20moody%20sophisticated%20design%20Bangalore%20India&width=1920&height=800&seq=convention-halls-hero-bg&orientation=landscape"
+          src="https://static.readdy.ai/image/72ebb3450643617b8a5b38c5c017e687/5282f8116874fdab13d789ece51dd5d9.png"
           alt="Convention Halls Architecture"
           className="w-full h-full object-cover object-top"
         />
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-archin-black/80 via-archin-black/70 to-archin-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-archin-black/65 via-archin-black/55 to-archin-black/85" />
       </div>
 
       {/* Content */}
