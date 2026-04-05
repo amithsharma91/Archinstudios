@@ -133,7 +133,7 @@ export default function Services() {
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-archin-navy/90 via-archin-navy/50 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-archin-navy/95 via-archin-navy/60 to-archin-navy/10" />
 
                     {/* Content overlay */}
                     <div className="absolute inset-0 flex flex-col justify-end px-8 pb-8">
