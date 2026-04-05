@@ -145,14 +145,6 @@ export const industrialProjects: Project[] = [
 
 export const projectCategories = [
   {
-    id: 'industrial',
-    title: 'Industrial Architecture',
-    description: 'Our primary specialty — warehouses, factories and large-scale industrial complexes engineered for performance, safety and long-term durability across Karnataka.',
-    projects: industrialProjects,
-    viewAllLink: '/projects/industrial',
-    viewAllText: 'View All Industrial Projects',
-  },
-  {
     id: 'residential',
     title: 'Residential Architecture',
     description: 'Bespoke homes that reflect your lifestyle and aspirations. From contemporary villas to traditional residences, we design spaces that become sanctuaries.',
@@ -191,5 +183,13 @@ export const projectCategories = [
     projects: commercialProjects,
     viewAllLink: '/projects/commercial',
     viewAllText: 'View All Commercial Projects',
+  },
+  {
+    id: 'industrial',
+    title: 'Industrial Architecture',
+    description: 'Large-scale industrial complexes engineered for performance, safety and long-term durability — warehouses, factories and industrial facilities across Karnataka.',
+    projects: industrialProjects,
+    viewAllLink: '/projects/industrial',
+    viewAllText: 'View All Industrial Projects',
   },
 ];
