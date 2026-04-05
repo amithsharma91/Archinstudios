@@ -41,7 +41,7 @@ export default function StudioStory() {
 
             <div className="space-y-6">
               <p className="font-body text-lg text-archin-grey leading-relaxed">
-                ARCHIN was founded in 2007 by Bharath and Team with a singular vision: 
+                ARCHIN was founded in 2007 by our Lead Architect and Team with a singular vision: 
                 to create architectural spaces that seamlessly blend international design 
                 standards with the unique cultural and climatic context of India. What began 
                 as a small practice in Bangalore has grown into a respected studio with a 
