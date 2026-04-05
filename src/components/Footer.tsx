@@ -110,12 +110,20 @@ export default function Footer() {
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <i className="ri-phone-line text-archin-gold mt-0.5 flex-shrink-0 text-sm" />
-                  <a
-                    href="tel:+919980377877"
-                    className="text-archin-cream/60 hover:text-archin-gold font-body text-sm transition-colors duration-300"
-                  >
-                    +91 99803 77877
-                  </a>
+                  <div className="flex flex-col gap-1">
+                    <a
+                      href="tel:+919980377877"
+                      className="text-archin-cream/60 hover:text-archin-gold font-body text-sm transition-colors duration-300"
+                    >
+                      +91 99803 77877
+                    </a>
+                    <a
+                      href="tel:+919632102529"
+                      className="text-archin-cream/60 hover:text-archin-gold font-body text-sm transition-colors duration-300"
+                    >
+                      +91 96321 02529
+                    </a>
+                  </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <i className="ri-mail-line text-archin-gold mt-0.5 flex-shrink-0 text-sm" />
