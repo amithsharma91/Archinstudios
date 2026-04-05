@@ -13,7 +13,7 @@ export default function ContactCTA() {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
@@ -24,81 +24,124 @@ export default function ContactCTA() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 bg-archin-navy relative overflow-hidden">
+    <section ref={sectionRef} className="relative overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://readdy.ai/api/search-image?query=modern%20architecture%20building%20exterior%20at%20twilight%20dramatic%20lighting%20geometric%20shapes%20luxury%20contemporary%20design%20elegant%20professional%20architectural%20photography%20with%20warm%20golden%20tones&width=1920&height=800&seq=cta-bg-navy-1&orientation=landscape"
           alt="Architecture Background"
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-archin-navy/80" />
+        <div className="absolute inset-0 bg-archin-navy/88" />
       </div>
 
-      <div className="px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Label */}
-          <span
-            className={`inline-block px-6 py-2 bg-archin-gold/10 border border-archin-gold/30 text-archin-gold font-body text-sm tracking-widest uppercase mb-6 transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            Start Your Project
-          </span>
-
-          {/* Heading */}
-          <h2
-            className={`font-heading text-4xl md:text-5xl lg:text-6xl font-light text-archin-cream mb-6 tracking-wide leading-tight transition-all duration-700 delay-100 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            Ready to Transform
-            <br />
-            <span className="text-archin-gold">Your Space?</span>
-          </h2>
-
-          {/* Description */}
-          <p
-            className={`font-body text-lg text-archin-cream/80 max-w-2xl mx-auto mb-10 leading-relaxed transition-all duration-700 delay-200 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            Whether you're dreaming of a new home, planning a renovation, or 
-            designing a commercial space, we'd love to hear about your project. 
-            Let's create something extraordinary together.
-          </p>
-
-          {/* CTA Button */}
-          <div
-            className={`transition-all duration-700 delay-300 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            <Link 
-              to="/contact" 
-              className="inline-block px-8 py-4 bg-archin-gold text-archin-navy font-body font-semibold tracking-wide hover:bg-archin-gold/90 transition-all duration-300 transform hover:scale-105 whitespace-nowrap cursor-pointer"
+      <div className="relative z-10 px-6 lg:px-16 py-24 md:py-32">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left: CTA Text */}
+            <div
+              className={`transition-all duration-1000 ${
+                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
+              }`}
             >
-              Get In Touch
-            </Link>
-          </div>
+              <span className="inline-flex items-center gap-3 mb-8">
+                <span className="w-8 h-px bg-archin-gold" />
+                <span className="font-body text-archin-gold text-xs tracking-[0.3em] uppercase">
+                  Start Your Project
+                </span>
+              </span>
 
-          {/* Trust Indicators */}
-          <div
-            className={`mt-16 flex flex-wrap items-center justify-center gap-8 md:gap-12 transition-all duration-700 delay-400 ${
-              isVisible ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            <div className="flex items-center gap-2 text-archin-cream/70">
-              <i className="ri-phone-line text-archin-gold" />
-              <span className="font-body text-sm">+91 99803 77877</span>
+              <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light text-archin-cream mb-6 tracking-wide leading-tight">
+                Ready to Transform
+                <br />
+                <span className="text-archin-gold italic">Your Space?</span>
+              </h2>
+
+              <p className="font-body text-base text-archin-cream/70 max-w-lg mb-10 leading-relaxed">
+                Whether you're planning an industrial facility, a new home, or a renovation,
+                we'd love to hear about your project. Let's create something extraordinary together.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-archin-gold text-archin-navy font-body font-semibold text-sm tracking-widest uppercase hover:bg-archin-gold/90 transition-all duration-300 transform hover:scale-105 whitespace-nowrap cursor-pointer"
+                >
+                  Get In Touch
+                  <i className="ri-arrow-right-line" />
+                </Link>
+                <Link
+                  to="/projects"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-archin-cream/30 text-archin-cream font-body font-medium text-sm tracking-widest uppercase hover:border-archin-gold hover:text-archin-gold transition-all duration-300 whitespace-nowrap cursor-pointer"
+                >
+                  View Our Work
+                </Link>
+              </div>
             </div>
-            <div className="flex items-center gap-2 text-archin-cream/70">
-              <i className="ri-mail-line text-archin-gold" />
-              <span className="font-body text-sm">Thearchinstudios@gmail.com</span>
-            </div>
-            <div className="flex items-center gap-2 text-archin-cream/70">
-              <i className="ri-map-pin-line text-archin-gold" />
-              <span className="font-body text-sm">Bangalore, India</span>
+
+            {/* Right: Contact Details */}
+            <div
+              className={`transition-all duration-1000 delay-200 ${
+                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
+              }`}
+            >
+              <div className="border border-archin-gold/20 bg-archin-cream/5 backdrop-blur-sm p-8 space-y-6">
+                {[
+                  {
+                    icon: 'ri-phone-line',
+                    label: 'Call Us',
+                    value: '+91 99803 77877',
+                    href: 'tel:+919980377877',
+                  },
+                  {
+                    icon: 'ri-mail-line',
+                    label: 'Email Us',
+                    value: 'Thearchinstudios@gmail.com',
+                    href: 'mailto:thearchinstudios@gmail.com',
+                  },
+                  {
+                    icon: 'ri-map-pin-line',
+                    label: 'Visit Studio',
+                    value: 'Jakkur, Yelahanka, Bengaluru 560064',
+                    href: 'https://maps.app.goo.gl/5QKW6wV7iywM52k99',
+                  },
+                  {
+                    icon: 'ri-time-line',
+                    label: 'Studio Hours',
+                    value: 'Mon – Sat: 9:00 AM – 6:30 PM',
+                    href: undefined,
+                  },
+                ].map((item, i) => (
+                  <div
+                    key={item.label}
+                    className={`flex items-start gap-4 pb-6 border-b border-archin-gold/10 last:border-b-0 last:pb-0 transition-all duration-700 ${
+                      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                    }`}
+                    style={{ transitionDelay: `${400 + i * 100}ms` }}
+                  >
+                    <div className="w-10 h-10 flex items-center justify-center border border-archin-gold/30 text-archin-gold flex-shrink-0">
+                      <i className={`${item.icon} text-base`} />
+                    </div>
+                    <div>
+                      <div className="font-body text-archin-gold/70 text-xs tracking-widest uppercase mb-1">
+                        {item.label}
+                      </div>
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          target={item.href.startsWith('http') ? '_blank' : undefined}
+                          rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                          className="font-body text-archin-cream text-sm hover:text-archin-gold transition-colors duration-300 cursor-pointer"
+                        >
+                          {item.value}
+                        </a>
+                      ) : (
+                        <span className="font-body text-archin-cream text-sm">{item.value}</span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
