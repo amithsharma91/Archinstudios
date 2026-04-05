@@ -14,10 +14,10 @@ export default function Hero() {
         <img
           src="https://readdy.ai/api/search-image?query=elegant%20modern%20architecture%20office%20reception%20lobby%20sophisticated%20interior%20design%20marble%20floors%20ambient%20lighting%20luxury%20office%20space%20professional%20environment%20with%20warm%20golden%20tones&width=1920&height=700&seq=contact-hero-navy-1&orientation=landscape"
           alt="Contact ARCHIN Studio"
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover opacity-45"
         />
         {/* Navy Overlay */}
-        <div className="absolute inset-0 bg-archin-navy/70" />
+        <div className="absolute inset-0 bg-archin-navy/55" />
       </div>
 
       {/* Content */}
