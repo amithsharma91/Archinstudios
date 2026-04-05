@@ -139,7 +139,7 @@ export default function ContactSection() {
     {
       icon: 'ri-phone-line',
       title: 'Phone',
-      lines: ['+91 99803 77877'],
+      lines: ['+91 99803 77877', '+91 96321 02529'],
       href: 'tel:+919980377877',
     },
     {
