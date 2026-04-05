@@ -88,11 +88,11 @@ export default function ArchitectProfile() {
           >
             {/* Title */}
             <span className="inline-block px-6 py-2 bg-archin-gold/10 border border-archin-gold/30 text-archin-gold font-body text-sm tracking-widest uppercase mb-6">
-              Bharath and Team
+              Lead Architect and Team
             </span>
 
             <h2 className="font-heading text-4xl md:text-5xl font-light text-archin-navy mb-2 tracking-wide">
-              Bharath and Team
+              Lead Architect and Team
             </h2>
 
             <p className="text-archin-gold font-body text-sm mb-8">
@@ -102,7 +102,7 @@ export default function ArchitectProfile() {
             {/* Bio */}
             <div className="space-y-6 mb-10">
               <p className="font-body text-lg text-archin-grey leading-relaxed">
-                Bharath and Team bring over 19 years of architectural excellence to every project.
+                Our Lead Architect and Team bring over 19 years of architectural excellence to every project.
                 With a Bachelor of Architecture from Visveswaraiah Technological University Belgaum
                 and a Master of Science in Engineering Project Management from the University of Leeds
                 United Kingdom, the studio combines international design thinking with deep rooted
