@@ -14,14 +14,13 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://readdy.ai/api/search-image?query=large%20scale%20industrial%20warehouse%20factory%20building%20exterior%20architecture%20dramatic%20wide%20angle%20shot%20steel%20structure%20concrete%20modern%20industrial%20facility%20with%20dramatic%20sky%20golden%20hour%20lighting%20professional%20architectural%20photography&width=1920&height=1080&seq=hero-industrial-archin-1&orientation=landscape"
-          alt="Industrial Architecture by ARCHIN Studio"
-          className="w-full h-full object-cover object-center scale-105"
-          style={{ transform: 'scale(1.05)' }}
+          src="https://readdy.ai/api/search-image?query=stunning%20modern%20luxury%20residential%20villa%20exterior%20architecture%20with%20beautiful%20landscaping%20warm%20golden%20hour%20lighting%20elegant%20contemporary%20home%20design%20with%20clean%20lines%20large%20windows%20stone%20facade%20professional%20architectural%20photography%20wide%20angle&width=1920&height=1080&seq=hero-arch-interiors-main-1&orientation=landscape"
+          alt="Architecture and Interior Design by ARCHIN Studio Bengaluru"
+          className="w-full h-full object-cover object-center"
         />
         {/* Layered Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-archin-navy/90 via-archin-navy/70 to-archin-navy/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-archin-navy via-transparent to-archin-navy/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-archin-navy/90 via-archin-navy/65 to-archin-navy/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-archin-navy/80 via-transparent to-archin-navy/20" />
       </div>
 
       {/* Decorative vertical line */}
@@ -44,7 +43,7 @@ export default function Hero() {
               <span className="inline-flex items-center gap-3 mb-8">
                 <span className="w-8 h-px bg-archin-gold" />
                 <span className="font-body text-archin-gold text-xs tracking-[0.3em] uppercase">
-                  Industrial Architecture Specialists
+                  Architecture &amp; Interior Design Studio — Bengaluru
                 </span>
               </span>
             </div>
@@ -55,11 +54,11 @@ export default function Hero() {
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              Built for Scale.
+              Spaces That
               <br />
-              <span className="text-archin-gold italic">Engineered</span>
+              <span className="text-archin-gold italic">Inspire.</span>
               <br />
-              to Last.
+              Designs That Last.
             </h1>
 
             {/* Tagline */}
@@ -68,7 +67,7 @@ export default function Hero() {
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              ARCHIN Studio specialises in industrial architecture — warehouses, factories and large-scale facilities designed for performance, safety and long-term durability across Karnataka.
+              ARCHIN Studio is a Bengaluru-based architecture and interior design firm with 19+ years of experience — crafting homes, workspaces, industrial facilities and interiors that are beautiful, functional and built to endure.
             </p>
 
             {/* CTA Buttons */}
@@ -78,10 +77,10 @@ export default function Hero() {
               }`}
             >
               <Link
-                to="/projects/industrial"
+                to="/projects"
                 className="px-8 py-4 bg-archin-gold text-archin-navy font-body font-semibold text-sm tracking-widest uppercase hover:bg-archin-gold/90 transition-all duration-300 transform hover:scale-105 whitespace-nowrap cursor-pointer inline-flex items-center gap-2"
               >
-                View Industrial Projects
+                Explore Our Work
                 <i className="ri-arrow-right-line" />
               </Link>
               <Link
