@@ -137,13 +137,21 @@ export const industrialProjects: Project[] = [
     id: 'ind-001',
     title: 'Industrial Project',
     location: 'Bangalore',
-    modelImage: 'https://storage.readdy-site.link/project_files/96a3b98c-9790-4aa6-b897-2e38de9e112e/c3a79995-a41d-4d20-8dae-0496def0f3d5_HEIF-Image.jpeg?v=9f3028b696ea132673625e4539670add',
+    modelImage: 'https://storage.readdy-site.link/project_files/96a3b98c-9790-4aa6-b897-2e38de9e112e/c3a79995-a41d-4d20-8dae-0496def0f3d5_HEIF-Image.jpeg?v=7a961b9512ab5849f04963bd8a96c025',
     executedImage: 'https://storage.readdy-site.link/project_files/96a3b98c-9790-4aa6-b897-2e38de9e112e/c3a79995-a41d-4d20-8dae-0496def0f3d5_HEIF-Image.jpeg?v=9f3028b696ea132673625e4539670add',
     category: 'industrial',
   },
 ];
 
 export const projectCategories = [
+  {
+    id: 'industrial',
+    title: 'Industrial Architecture',
+    description: 'Our primary specialty — warehouses, factories and large-scale industrial complexes engineered for performance, safety and long-term durability across Karnataka.',
+    projects: industrialProjects,
+    viewAllLink: '/projects/industrial',
+    viewAllText: 'View All Industrial Projects',
+  },
   {
     id: 'residential',
     title: 'Residential Architecture',
@@ -183,13 +191,5 @@ export const projectCategories = [
     projects: commercialProjects,
     viewAllLink: '/projects/commercial',
     viewAllText: 'View All Commercial Projects',
-  },
-  {
-    id: 'industrial',
-    title: 'Industrial',
-    description: 'Engineered for scale and built for performance. Our industrial facilities — from warehouses to manufacturing plants — combine structural precision with efficient spatial planning.',
-    projects: industrialProjects,
-    viewAllLink: '/projects/industrial',
-    viewAllText: 'View All Industrial Projects',
   },
 ];
