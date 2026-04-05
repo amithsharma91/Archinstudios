@@ -42,21 +42,17 @@ export default function Intro() {
               </span>
 
               <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light text-archin-navy mb-8 tracking-wide leading-tight">
-                Industrial Design
+                Architecture &amp;
                 <br />
-                <span className="text-archin-gold italic">Done Right</span>
+                <span className="text-archin-gold italic">Interiors, Elevated</span>
               </h2>
 
               <p className="font-body text-base text-archin-grey leading-relaxed mb-6">
-                ARCHIN Studio is a Bangalore-based architecture firm with 19+ years of experience,
-                specialising in industrial facilities — warehouses, factories and large-scale manufacturing
-                complexes. We engineer spaces that meet demanding functional requirements while maintaining
-                the highest standards of structural integrity, safety and operational efficiency.
+                ARCHIN Studio is a Bengaluru-based architecture and interior design firm with 19+ years of experience. We design homes, commercial spaces, industrial facilities and interiors that are thoughtfully crafted — balancing beauty, function and lasting quality.
               </p>
 
               <p className="font-body text-base text-archin-grey leading-relaxed mb-10">
-                Founded by UK-educated architects, our studio brings international design thinking
-                to every project, combined with deep-rooted local expertise across Karnataka.
+                Founded by UK-educated architects, our studio brings international design sensibility to every project, grounded in deep local expertise across Karnataka. From concept to completion, we are your creative and technical partner.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -85,8 +81,8 @@ export default function Intro() {
               {/* Main Image */}
               <div className="relative w-full h-[480px] lg:h-[560px]">
                 <img
-                  src="https://readdy.ai/api/search-image?query=modern%20architecture%20studio%20interior%20with%20architectural%20drawings%20blueprints%20on%20table%20warm%20ambient%20lighting%20minimalist%20workspace%20elegant%20professional%20design%20studio%20with%20wooden%20desk%20and%20architectural%20models%20warm%20cream%20tones&width=800&height=1000&seq=intro-studio-archin-2&orientation=portrait"
-                  alt="ARCHIN Studio workspace"
+                  src="https://readdy.ai/api/search-image?query=luxurious%20modern%20interior%20design%20living%20room%20with%20elegant%20furniture%20warm%20ambient%20lighting%20high%20ceilings%20natural%20materials%20marble%20floors%20sophisticated%20contemporary%20home%20interior%20with%20neutral%20tones%20cream%20beige%20gold%20accents%20professional%20interior%20photography&width=800&height=1000&seq=intro-interiors-archin-3&orientation=portrait"
+                  alt="ARCHIN Studio interior design project Bengaluru"
                   className="w-full h-full object-cover object-top"
                 />
                 {/* Gold corner accents */}
