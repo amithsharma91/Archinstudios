@@ -17,7 +17,7 @@ export default function Hero() {
           alt="Industrial Architecture"
           className="w-full h-full object-cover object-top"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-archin-black/80 via-archin-black/70 to-archin-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-archin-black/65 via-archin-black/55 to-archin-black/85" />
       </div>
 
       {/* Content */}
