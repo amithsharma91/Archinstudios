@@ -118,10 +118,10 @@ export default function Footer() {
                       +91 99803 77877
                     </a>
                     <a
-                      href="tel:+919632102529"
+                      href="tel:+919980818208"
                       className="text-archin-cream/60 hover:text-archin-gold font-body text-sm transition-colors duration-300"
                     >
-                      +91 96321 02529
+                      +91 99808 18208
                     </a>
                   </div>
                 </li>
