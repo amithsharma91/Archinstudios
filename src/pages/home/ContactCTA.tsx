@@ -90,7 +90,7 @@ export default function ContactCTA() {
                   {
                     icon: 'ri-phone-line',
                     label: 'Call Us',
-                    value: '+91 99803 77877  |  +91 96321 02529',
+                    value: '+91 99803 77877 / +91 99808 18208',
                     href: 'tel:+919980377877',
                   },
                   {
