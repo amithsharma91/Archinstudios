@@ -1,7 +1,17 @@
-# ARCHIN Studio - Architecture & Interiors Website
+# ARCHIN Studio - Industrial Architecture & Design Website
 
 ## 1. Project Description
-ARCHIN is a premium architecture and interior design studio based in Bangalore, led by Principal Architect Bharath Huwadiga Gopal. The website showcases the studio's portfolio, services, and credentials with a luxury dark-themed design featuring gold accents.
+ARCHIN is a premium architecture studio based in Bangalore, led by Principal Architect Bharath Huwadiga Gopal. **Industrial architecture is the primary focus** — warehouses, factories and large-scale industrial facilities. The website showcases the studio's industrial portfolio first, with additional services in residential, commercial, interior and renovation design.
+
+**Primary Focus:**
+- Industrial architecture (warehouses, factories, large-scale facilities)
+
+**Secondary Services:**
+- Residential architecture
+- Interior design
+- Renovation
+- Convention halls
+- Commercial architecture
 
 **Target Audience:**
 - High-end residential and commercial clients
