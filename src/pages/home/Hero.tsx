@@ -19,8 +19,8 @@ export default function Hero() {
           className="w-full h-full object-cover object-center"
         />
         {/* Layered Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-archin-navy/90 via-archin-navy/65 to-archin-navy/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-archin-navy/80 via-transparent to-archin-navy/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-archin-navy/85 via-archin-navy/55 to-archin-navy/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-archin-navy/70 via-transparent to-archin-navy/10" />
       </div>
 
       {/* Decorative vertical line */}
