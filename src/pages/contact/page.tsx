@@ -14,7 +14,7 @@ const contactSchema = [
     name: 'Contact ARCHIN Studio',
     url: `${BASE_URL}/contact`,
     description:
-      'Contact ARCHIN Studio at Building No 21, ARCHIN Building, Jakkur, Yelahanka, Bengaluru. Call +91 99803 77877 or email Thearchinstudios@gmail.com.',
+      'Contact ARCHIN Studio at Building No 21, ARCHIN Building, Jakkur, Yelahanka, Bengaluru. Call +91 99803 77877 / +91 96321 02529 or email Thearchinstudios@gmail.com.',
     mainEntity: {
       '@type': 'LocalBusiness',
       name: 'ARCHIN Studio',
@@ -50,7 +50,7 @@ export default function Contact() {
     <div className="min-h-screen bg-archin-cream font-body">
       <SEOMeta
         title="Contact ARCHIN Studio | Architects Bengaluru"
-        description="Contact ARCHIN Studio at Building No 21, ARCHIN Building, Jakkur, Yelahanka, Bengaluru 560064. Call +91 99803 77877 or email Thearchinstudios@gmail.com."
+        description="Contact ARCHIN Studio at Building No 21, ARCHIN Building, Jakkur, Yelahanka, Bengaluru 560064. Call +91 99803 77877 / +91 96321 02529 or email Thearchinstudios@gmail.com."
         keywords="contact architects Bengaluru, architecture studio Yelahanka, ARCHIN Studio address, architect contact Bangalore 560064"
         canonicalPath="/contact"
         schema={contactSchema}
