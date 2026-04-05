@@ -5,7 +5,7 @@ interface ProjectCardProps {
   modelImage: string;
   executedImage: string;
   title: string;
-  location: string;
+  location?: string;
   delay?: number;
 }
 
@@ -13,7 +13,6 @@ export default function ProjectCard({
   modelImage,
   executedImage,
   title,
-  location,
   delay = 0,
 }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -114,10 +113,6 @@ export default function ProjectCard({
         <h3 className="font-display text-xl md:text-2xl text-archin-cream group-hover:text-archin-gold transition-colors duration-300">
           {title}
         </h3>
-        <div className="flex items-center gap-2 text-archin-gray text-sm">
-          <i className="ri-map-pin-line" />
-          <span>{location}</span>
-        </div>
       </div>
     </div>
   );
