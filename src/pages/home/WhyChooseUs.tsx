@@ -10,19 +10,19 @@ const reasons = [
   {
     id: 2,
     title: 'Sustainable Design',
-    description: 'IGBC Accredited Professional committed to eco-friendly architecture, creating energy-efficient spaces that minimize environmental impact.',
+    description: 'IGBC Accredited Professional committed to eco-friendly architecture, creating energy-efficient spaces that minimize environmental impact without compromising on aesthetics.',
     icon: 'ri-plant-line',
   },
   {
     id: 3,
     title: 'End-to-End Service',
-    description: 'From initial concept to final execution, we handle every aspect of your project with meticulous attention to detail and quality.',
+    description: 'From initial concept to final execution, we handle every aspect of your project with meticulous attention to detail, quality craftsmanship and transparent communication.',
     icon: 'ri-stack-line',
   },
   {
     id: 4,
     title: 'Client-Centric Approach',
-    description: 'Your vision drives our design. We listen, collaborate, and translate your aspirations into spaces that exceed expectations.',
+    description: 'Your vision drives our design. We listen, collaborate, and translate your aspirations into spaces that exceed expectations and stand the test of time.',
     icon: 'ri-heart-3-line',
   },
 ];
@@ -50,68 +50,86 @@ export default function WhyChooseUs() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 bg-archin-cream relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 right-0 w-96 h-96 border border-archin-gold rounded-full -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 border border-archin-gold rounded-full translate-y-1/2 -translate-x-1/2" />
-      </div>
-
-      <div className="px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-16 md:mb-20">
-          <span
-            className={`inline-block px-6 py-2 bg-archin-gold/10 border border-archin-gold/30 text-archin-gold font-body text-sm tracking-widest uppercase mb-6 transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            Why Archin
-          </span>
-          <h2
-            className={`font-heading text-4xl md:text-5xl lg:text-6xl font-light text-archin-navy mb-6 tracking-wide transition-all duration-700 delay-100 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            Why Choose Us
-          </h2>
-          <p
-            className={`font-body text-lg text-archin-grey leading-relaxed transition-all duration-700 delay-200 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            We combine architectural excellence with personalized service, 
-            delivering projects that stand out for their quality, innovation, and attention to detail.
-          </p>
-        </div>
-
-        {/* Reasons Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          {reasons.map((reason, index) => (
+    <section ref={sectionRef} className="py-24 md:py-32 bg-archin-cream overflow-hidden">
+      <div className="px-6 lg:px-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 lg:gap-20">
+            {/* Left: Header */}
             <div
-              key={reason.id}
-              className={`group flex gap-6 transition-all duration-700 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              className={`lg:col-span-2 transition-all duration-1000 ${
+                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
               }`}
-              style={{ transitionDelay: `${300 + index * 100}ms` }}
             >
-              {/* Icon */}
-              <div className="flex-shrink-0">
-                <div className="w-16 h-16 flex items-center justify-center border border-archin-gold/30 text-archin-gold group-hover:bg-archin-gold group-hover:text-archin-navy transition-all duration-300">
-                  <i className={`${reason.icon} text-2xl`} />
+              <span className="inline-flex items-center gap-3 mb-8">
+                <span className="w-8 h-px bg-archin-gold" />
+                <span className="font-body text-archin-gold text-xs tracking-[0.3em] uppercase">
+                  Why Archin
+                </span>
+              </span>
+
+              <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light text-archin-navy mb-8 tracking-wide leading-tight">
+                Why
+                <br />
+                Choose
+                <br />
+                <span className="text-archin-gold italic">Us</span>
+              </h2>
+
+              <p className="font-body text-base text-archin-grey leading-relaxed mb-10">
+                We combine architectural excellence with personalized service, delivering projects that stand out for their quality, innovation, and attention to detail.
+              </p>
+
+              {/* Decorative element */}
+              <div className="w-full h-px bg-gradient-to-r from-archin-gold/60 to-transparent" />
+              <div className="mt-8 grid grid-cols-2 gap-6">
+                <div>
+                  <div className="font-heading text-3xl text-archin-navy font-light">200+</div>
+                  <div className="font-body text-xs text-archin-grey tracking-widest uppercase mt-1">Projects Completed</div>
+                </div>
+                <div>
+                  <div className="font-heading text-3xl text-archin-navy font-light">19+</div>
+                  <div className="font-body text-xs text-archin-grey tracking-widest uppercase mt-1">Years Experience</div>
                 </div>
               </div>
-
-              {/* Content */}
-              <div>
-                <h3 className="font-heading text-2xl md:text-3xl font-light text-archin-navy mb-3 tracking-wide group-hover:text-archin-gold transition-colors duration-300">
-                  {reason.title}
-                </h3>
-                <p className="font-body text-sm text-archin-grey leading-relaxed">
-                  {reason.description}
-                </p>
-              </div>
             </div>
-          ))}
+
+            {/* Right: Reasons */}
+            <div
+              className={`lg:col-span-3 space-y-0 transition-all duration-1000 delay-200 ${
+                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
+              }`}
+            >
+              {reasons.map((reason, index) => (
+                <div
+                  key={reason.id}
+                  className={`group flex gap-6 py-8 border-b border-archin-gold/15 last:border-b-0 transition-all duration-700 ${
+                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}
+                  style={{ transitionDelay: `${300 + index * 100}ms` }}
+                >
+                  {/* Number + Icon */}
+                  <div className="flex-shrink-0 flex flex-col items-center gap-2">
+                    <div className="w-12 h-12 flex items-center justify-center border border-archin-gold/30 text-archin-gold group-hover:bg-archin-gold group-hover:text-archin-navy transition-all duration-300">
+                      <i className={`${reason.icon} text-xl`} />
+                    </div>
+                    <span className="font-heading text-archin-gold/30 text-xs font-light">
+                      0{reason.id}
+                    </span>
+                  </div>
+
+                  {/* Content */}
+                  <div className="pt-1">
+                    <h3 className="font-heading text-xl md:text-2xl font-light text-archin-navy mb-2 tracking-wide group-hover:text-archin-gold transition-colors duration-300">
+                      {reason.title}
+                    </h3>
+                    <p className="font-body text-sm text-archin-grey leading-relaxed">
+                      {reason.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
