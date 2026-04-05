@@ -13,19 +13,6 @@ import Credentials from "../pages/credentials/page";
 import Contact from "../pages/contact/page";
 import Reviews from "../pages/reviews/page";
 
-// Placeholder components for other pages - will be implemented in Phase 2
-function Services() {
-  return (
-    <div className="min-h-screen bg-archin-black flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="font-display text-4xl text-archin-cream mb-4">Services</h1>
-        <p className="text-archin-gray">Coming Soon</p>
-        <a href="/" className="text-archin-gold mt-4 inline-block">← Back to Home</a>
-      </div>
-    </div>
-  );
-}
-
 const routes: RouteObject[] = [
   {
     path: "/",
@@ -70,10 +57,6 @@ const routes: RouteObject[] = [
   {
     path: "/credentials",
     element: <Credentials />,
-  },
-  {
-    path: "/services",
-    element: <Services />,
   },
   {
     path: "/contact",
