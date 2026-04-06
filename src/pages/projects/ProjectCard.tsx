@@ -57,13 +57,9 @@ export default function ProjectCard({
         >
           <img
             src={modelImage}
-            alt={`${title} - 3D Model`}
+            alt={`${title} - Model`}
             className="w-full h-full object-cover"
           />
-          {/* Label */}
-          <div className="absolute top-4 left-4 px-3 py-1 bg-archin-black/80 backdrop-blur-sm">
-            <span className="text-xs tracking-wider uppercase text-archin-gold">3D Model</span>
-          </div>
           {/* Divider Line */}
           <div
             className={`absolute right-0 top-0 bottom-0 w-px bg-archin-gold/50 transition-all duration-300 ${
@@ -83,10 +79,6 @@ export default function ProjectCard({
             alt={`${title} - Executed`}
             className="w-full h-full object-cover"
           />
-          {/* Label */}
-          <div className="absolute top-4 right-4 px-3 py-1 bg-archin-gold/90 backdrop-blur-sm">
-            <span className="text-xs tracking-wider uppercase text-archin-black">Executed</span>
-          </div>
         </div>
 
         {/* Hover Overlay */}
