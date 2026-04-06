@@ -24,7 +24,7 @@ const industrialSchema = [
 
 const showcaseImages = [
   'https://storage.readdy-site.link/project_files/96a3b98c-9790-4aa6-b897-2e38de9e112e/c3a79995-a41d-4d20-8dae-0496def0f3d5_HEIF-Image.jpeg?v=7a961b9512ab5849f04963bd8a96c025',
-  'https://storage.readdy-site.link/project_files/96a3b98c-9790-4aa6-b897-2e38de9e112e/c3a79995-a41d-4d20-8dae-0496def0f3d5_HEIF-Image.jpeg?v=9f3028b696ea132673625e4539670add',
+  'https://static.readdy.ai/image/72ebb3450643617b8a5b38c5c017e687/aee272710a405718ec4704e63095d91c.jpeg',
 ];
 
 export default function IndustrialProjects() {
