@@ -1,9 +1,91 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 
-export default function ContactCTA() {
-  const sectionRef = useRef<HTMLElement>(null);
+interface ContactInfoItemProps {
+  icon: string;
+  title: string;
+  lines: string[];
+  href?: string;
+  sublabel?: string;
+  delay: number;
+}
+
+function ContactInfoItem({ icon, title, lines, href, sublabel, delay }: ContactInfoItemProps) {
   const [isVisible, setIsVisible] = useState(false);
+  const itemRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setIsVisible(true), delay);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (itemRef.current) {
+      observer.observe(itemRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [delay]);
+
+  const content = (
+    <div
+      ref={itemRef}
+      className={`flex items-start gap-5 p-6 bg-white/50 border border-archin-gold/20 transition-all duration-700 group hover:border-archin-gold/50 ${
+        isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+      }`}
+    >
+      {/* Icon */}
+      <div className="w-12 h-12 flex items-center justify-center bg-archin-gold/10 border border-archin-gold/30 flex-shrink-0 transition-all duration-300 group-hover:bg-archin-gold/20">
+        <i className={`${icon} text-xl text-archin-gold`} />
+      </div>
+
+      {/* Content */}
+      <div className="flex-1">
+        <span className="text-archin-gold font-body text-xs uppercase tracking-wider block mb-2">
+          {title}
+        </span>
+        <div className="space-y-1">
+          {lines.map((line, index) => (
+            <p key={index} className="font-body text-sm text-archin-navy">
+              {line}
+            </p>
+          ))}
+        </div>
+        {sublabel && (
+          <p className="font-body text-xs italic text-archin-gold mt-2 tracking-wide">
+            {sublabel}
+          </p>
+        )}
+      </div>
+    </div>
+  );
+
+  if (href) {
+    return (
+      <a href={href} className="block cursor-pointer">
+        {content}
+      </a>
+    );
+  }
+
+  return content;
+}
+
+export default function ContactSection() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  const [fullName, setFullName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [service, setService] = useState('');
+  const [location, setLocation] = useState('');
+  const [budget, setBudget] = useState('');
+  const [brief, setBrief] = useState('');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -13,7 +95,7 @@ export default function ContactCTA() {
           observer.disconnect();
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
     if (sectionRef.current) {
@@ -23,124 +105,206 @@ export default function ContactCTA() {
     return () => observer.disconnect();
   }, []);
 
+  const handleWhatsApp = () => {
+    const message = `Hello ARCHIN Studio!\n\nI am interested in your architecture services.\nHere are my details:\n\nName: ${fullName}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\nLocation: ${location}\nBudget: ${budget}\n\nProject Brief:\n${brief}\n\nI found you through your website.\nLooking forward to hearing from you.`;
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/919980377877?text=${encoded}`, '_blank');
+  };
+
+  const contactInfo = [
+    {
+      icon: 'ri-map-pin-line',
+      title: 'Address',
+      lines: [
+        'Building No 21, ARCHIN Building',
+        'Nehru Nagar Main Road, Behind VRL Godown',
+        'Jakkur, Near Unishire Apartments',
+        'Yelahanka, Bengaluru, Karnataka 560064',
+      ],
+      href: 'https://maps.app.goo.gl/5QKW6wV7iywM52k99',
+      sublabel: 'Click to Open in Google Maps',
+    },
+    {
+      icon: 'ri-phone-line',
+      title: 'Phone',
+      lines: ['+91 99803 77877', '+91 99808 18208'],
+      href: 'tel:+919980377877',
+    },
+    {
+      icon: 'ri-mail-line',
+      title: 'Email',
+      lines: ['Thearchinstudios@gmail.com'],
+      href: 'mailto:thearchinstudios@gmail.com',
+    },
+    {
+      icon: 'ri-time-line',
+      title: 'Studio Hours',
+      lines: ['Monday to Saturday: 9:00 AM - 6:30 PM', 'Sunday: By Appointment'],
+    },
+  ];
+
+  const services = ['Residential Architecture', 'Interior Design', 'Renovation', 'Convention Hall', 'Commercial', 'Consultation Only'];
+  const budgetRanges = [
+    'Below 25 Lakhs',
+    '25 Lakhs to 50 Lakhs',
+    '50 Lakhs to 1 Crore',
+    '1 Crore to 3 Crores',
+    '3 Crores to 5 Crores',
+    'Above 5 Crores',
+    'Prefer to Discuss',
+  ];
+
+  const selectStyle = {
+    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23C9A96E' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")`,
+    backgroundRepeat: 'no-repeat' as const,
+    backgroundPosition: 'right 1rem center',
+  };
+
   return (
-    <section ref={sectionRef} className="relative overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="https://readdy.ai/api/search-image?query=modern%20architecture%20building%20exterior%20at%20twilight%20dramatic%20lighting%20geometric%20shapes%20luxury%20contemporary%20design%20elegant%20professional%20architectural%20photography%20with%20warm%20golden%20tones&width=1920&height=800&seq=cta-bg-navy-1&orientation=landscape"
-          alt="Architecture Background"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-archin-navy/88" />
-      </div>
-
-      <div className="relative z-10 px-6 lg:px-16 py-24 md:py-32">
+    <section ref={sectionRef} className="py-20 md:py-28 bg-archin-cream">
+      <div className="px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left: CTA Text */}
-            <div
-              className={`transition-all duration-1000 ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
-              }`}
-            >
-              <span className="inline-flex items-center gap-3 mb-8">
-                <span className="w-8 h-px bg-archin-gold" />
-                <span className="font-body text-archin-gold text-xs tracking-[0.3em] uppercase">
-                  Start Your Project
-                </span>
-              </span>
-
-              <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light text-archin-cream mb-6 tracking-wide leading-tight">
-                Ready to Transform
-                <br />
-                <span className="text-archin-gold italic">Your Space?</span>
-              </h2>
-
-              <p className="font-body text-base text-archin-cream/70 max-w-lg mb-10 leading-relaxed">
-                Whether you're planning an industrial facility, a new home, or a renovation,
-                we'd love to hear about your project. Let's create something extraordinary together.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-archin-gold text-archin-navy font-body font-semibold text-sm tracking-widest uppercase hover:bg-archin-gold/90 transition-all duration-300 transform hover:scale-105 whitespace-nowrap cursor-pointer"
-                >
-                  Get In Touch
-                  <i className="ri-arrow-right-line" />
-                </Link>
-                <Link
-                  to="/projects"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-archin-cream/30 text-archin-cream font-body font-medium text-sm tracking-widest uppercase hover:border-archin-gold hover:text-archin-gold transition-all duration-300 whitespace-nowrap cursor-pointer"
-                >
-                  View Our Work
-                </Link>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+            {/* Left Column - Contact Details */}
+            <div>
+              <div className={`mb-10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                <span className="inline-block px-6 py-2 bg-archin-gold/10 border border-archin-gold/30 text-archin-gold font-body text-sm tracking-widest uppercase mb-6">Reach Out</span>
+                <h2 className="font-heading text-4xl md:text-5xl font-light text-archin-navy mb-4 tracking-wide">Contact Details</h2>
+                <div className="w-16 h-px bg-archin-gold" />
+              </div>
+              <div className="space-y-4">
+                {contactInfo.map((info, index) => (
+                  <ContactInfoItem key={info.title} icon={info.icon} title={info.title} lines={info.lines} href={info.href} sublabel={info.sublabel} delay={index * 100} />
+                ))}
               </div>
             </div>
 
-            {/* Right: Contact Details */}
-            <div
-              className={`transition-all duration-1000 delay-200 ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
-              }`}
-            >
-              <div className="border border-archin-gold/20 bg-archin-cream/5 backdrop-blur-sm p-8 space-y-6">
-                {[
-                  {
-                    icon: 'ri-phone-line',
-                    label: 'Call Us',
-                    value: '+91 99803 77877 / +91 99808 18208',
-                    href: 'tel:+919980377877',
-                  },
-                  {
-                    icon: 'ri-mail-line',
-                    label: 'Email Us',
-                    value: 'Thearchinstudios@gmail.com',
-                    href: 'mailto:thearchinstudios@gmail.com',
-                  },
-                  {
-                    icon: 'ri-map-pin-line',
-                    label: 'Visit Studio',
-                    value: 'Jakkur, Yelahanka, Bengaluru 560064',
-                    href: 'https://maps.app.goo.gl/5QKW6wV7iywM52k99',
-                  },
-                  {
-                    icon: 'ri-time-line',
-                    label: 'Studio Hours',
-                    value: 'Mon – Sat: 9:00 AM – 6:30 PM',
-                    href: undefined,
-                  },
-                ].map((item, i) => (
-                  <div
-                    key={item.label}
-                    className={`flex items-start gap-4 pb-6 border-b border-archin-gold/10 last:border-b-0 last:pb-0 transition-all duration-700 ${
-                      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                    }`}
-                    style={{ transitionDelay: `${400 + i * 100}ms` }}
-                  >
-                    <div className="w-10 h-10 flex items-center justify-center border border-archin-gold/30 text-archin-gold flex-shrink-0">
-                      <i className={`${item.icon} text-base`} />
-                    </div>
-                    <div>
-                      <div className="font-body text-archin-gold/70 text-xs tracking-widest uppercase mb-1">
-                        {item.label}
-                      </div>
-                      {item.href ? (
-                        <a
-                          href={item.href}
-                          target={item.href.startsWith('http') ? '_blank' : undefined}
-                          rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                          className="font-body text-archin-cream text-sm hover:text-archin-gold transition-colors duration-300 cursor-pointer"
-                        >
-                          {item.value}
-                        </a>
-                      ) : (
-                        <span className="font-body text-archin-cream text-sm">{item.value}</span>
-                      )}
-                    </div>
+            {/* Right Column - WhatsApp Enquiry Form */}
+            <div>
+              <div className={`mb-10 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                <span className="inline-block px-6 py-2 bg-archin-gold/10 border border-archin-gold/30 text-archin-gold font-body text-sm tracking-widest uppercase mb-6">Send Enquiry</span>
+                <h2 className="font-heading text-4xl md:text-5xl font-light text-archin-navy mb-4 tracking-wide">WhatsApp Enquiry</h2>
+                <div className="w-16 h-px bg-archin-gold" />
+              </div>
+
+              <div className={`bg-white/50 border border-archin-gold/20 p-8 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                <div className="space-y-6">
+                  {/* Full Name */}
+                  <div>
+                    <label htmlFor="wa_fullName" className="block text-archin-grey font-body text-xs uppercase tracking-wider mb-2">Full Name</label>
+                    <input
+                      type="text"
+                      id="wa_fullName"
+                      value={fullName}
+                      onChange={(e) => setFullName(e.target.value)}
+                      className="w-full px-4 py-3 bg-archin-cream border border-archin-gold/30 text-archin-navy font-body text-sm focus:border-archin-gold focus:outline-none transition-colors duration-300"
+                      placeholder="Your full name"
+                    />
                   </div>
-                ))}
+
+                  {/* Phone Number */}
+                  <div>
+                    <label htmlFor="wa_phone" className="block text-archin-grey font-body text-xs uppercase tracking-wider mb-2">Phone Number</label>
+                    <input
+                      type="tel"
+                      id="wa_phone"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      className="w-full px-4 py-3 bg-archin-cream border border-archin-gold/30 text-archin-navy font-body text-sm focus:border-archin-gold focus:outline-none transition-colors duration-300"
+                      placeholder="Your phone number"
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <label htmlFor="wa_email" className="block text-archin-grey font-body text-xs uppercase tracking-wider mb-2">Email Address</label>
+                    <input
+                      type="email"
+                      id="wa_email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full px-4 py-3 bg-archin-cream border border-archin-gold/30 text-archin-navy font-body text-sm focus:border-archin-gold focus:outline-none transition-colors duration-300"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+
+                  {/* Service Required */}
+                  <div>
+                    <label htmlFor="wa_service" className="block text-archin-grey font-body text-xs uppercase tracking-wider mb-2">Service Required</label>
+                    <select
+                      id="wa_service"
+                      value={service}
+                      onChange={(e) => setService(e.target.value)}
+                      className="w-full px-4 py-3 bg-archin-cream border border-archin-gold/30 text-archin-navy font-body text-sm focus:border-archin-gold focus:outline-none transition-colors duration-300 appearance-none cursor-pointer"
+                      style={selectStyle}
+                    >
+                      <option value="">Select a service</option>
+                      {services.map((s) => <option key={s} value={s}>{s}</option>)}
+                    </select>
+                  </div>
+
+                  {/* Project Location */}
+                  <div>
+                    <label htmlFor="wa_location" className="block text-archin-grey font-body text-xs uppercase tracking-wider mb-2">Project Location</label>
+                    <input
+                      type="text"
+                      id="wa_location"
+                      value={location}
+                      onChange={(e) => setLocation(e.target.value)}
+                      className="w-full px-4 py-3 bg-archin-cream border border-archin-gold/30 text-archin-navy font-body text-sm focus:border-archin-gold focus:outline-none transition-colors duration-300"
+                      placeholder="Area and city"
+                    />
+                  </div>
+
+                  {/* Budget Range */}
+                  <div>
+                    <label htmlFor="wa_budget" className="block text-archin-grey font-body text-xs uppercase tracking-wider mb-2">Budget Range</label>
+                    <select
+                      id="wa_budget"
+                      value={budget}
+                      onChange={(e) => setBudget(e.target.value)}
+                      className="w-full px-4 py-3 bg-archin-cream border border-archin-gold/30 text-archin-navy font-body text-sm focus:border-archin-gold focus:outline-none transition-colors duration-300 appearance-none cursor-pointer"
+                      style={selectStyle}
+                    >
+                      <option value="">Select budget range</option>
+                      {budgetRanges.map((r) => <option key={r} value={r}>{r}</option>)}
+                    </select>
+                  </div>
+
+                  {/* Project Brief */}
+                  <div>
+                    <label htmlFor="wa_brief" className="block text-archin-grey font-body text-xs uppercase tracking-wider mb-2">Project Brief</label>
+                    <textarea
+                      id="wa_brief"
+                      rows={4}
+                      maxLength={500}
+                      value={brief}
+                      onChange={(e) => setBrief(e.target.value)}
+                      className="w-full px-4 py-3 bg-archin-cream border border-archin-gold/30 text-archin-navy font-body text-sm focus:border-archin-gold focus:outline-none transition-colors duration-300 resize-none"
+                      placeholder="Tell us about your project vision, requirements and timeline"
+                    />
+                    <p className="text-archin-grey font-body text-xs mt-1">{brief.length}/500 characters</p>
+                  </div>
+
+                  {/* WhatsApp Button */}
+                  <div>
+                    <button
+                      type="button"
+                      onClick={handleWhatsApp}
+                      className="w-full px-8 py-4 text-white font-body font-semibold tracking-wide flex items-center justify-center gap-3 transition-all duration-300 cursor-pointer whitespace-nowrap"
+                      style={{ backgroundColor: '#25D366' }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#1ebe5d'; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#25D366'; }}
+                    >
+                      <i className="ri-whatsapp-line text-xl" />
+                      <span>Send Enquiry on WhatsApp</span>
+                    </button>
+                    <p className="text-archin-grey font-body text-xs text-center mt-3 leading-relaxed">
+                      Your details will be sent directly to our WhatsApp.<br />
+                      We typically respond within 2 hours during business hours.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
