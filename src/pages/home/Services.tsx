@@ -83,14 +83,14 @@ export default function Services() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 bg-archin-navy overflow-hidden">
-      <div className="px-6 lg:px-16">
+    <section ref={sectionRef} className="py-10 md:py-24 lg:py-32 bg-archin-navy overflow-hidden">
+      <div className="px-5 lg:px-16">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-10 md:mb-16">
             <div>
               <span
-                className={`inline-flex items-center gap-3 mb-6 transition-all duration-700 ${
+                className={`inline-flex items-center gap-3 mb-4 md:mb-6 transition-all duration-700 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
               >
@@ -100,7 +100,7 @@ export default function Services() {
                 </span>
               </span>
               <h2
-                className={`font-heading text-4xl md:text-5xl lg:text-6xl font-light text-archin-cream tracking-wide transition-all duration-700 delay-100 ${
+                className={`font-heading text-[28px] md:text-5xl lg:text-6xl font-light text-archin-cream tracking-wide transition-all duration-700 delay-100 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
               >
@@ -108,7 +108,7 @@ export default function Services() {
               </h2>
             </div>
             <p
-              className={`font-body text-base text-archin-cream/60 max-w-sm leading-relaxed transition-all duration-700 delay-200 ${
+              className={`font-body text-sm text-archin-cream/60 max-w-sm leading-relaxed transition-all duration-700 delay-200 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
@@ -117,7 +117,7 @@ export default function Services() {
           </div>
 
           {/* Featured Services — Architecture & Interiors */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
             {featuredServices.map((service, index) => (
               <div
                 key={service.id}
@@ -127,31 +127,34 @@ export default function Services() {
                 style={{ transitionDelay: `${300 + index * 100}ms` }}
               >
                 <Link to={service.link} className="block">
-                  <div className="relative h-64 md:h-72 overflow-hidden">
+                  {/* Card: max 400px tall on mobile, 288px md, 288px lg */}
+                  <div className="relative max-h-[400px] h-[340px] md:h-72 overflow-hidden">
                     <img
                       src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-archin-navy/95 via-archin-navy/60 to-archin-navy/10" />
+                    {/* Stronger overlay for mobile readability */}
+                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.75) 100%)' }} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-archin-navy/80 via-archin-navy/30 to-transparent" />
 
                     {/* Content overlay */}
-                    <div className="absolute inset-0 flex flex-col justify-end px-8 pb-8">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="w-10 h-10 flex items-center justify-center bg-archin-gold text-archin-navy">
-                          <i className={`${service.icon} text-lg`} />
+                    <div className="absolute inset-0 flex flex-col justify-end px-5 md:px-8 pb-5 md:pb-8">
+                      <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                        <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-archin-gold text-archin-navy">
+                          <i className={`${service.icon} text-base md:text-lg`} />
                         </div>
-                        <span className="px-3 py-1 bg-archin-gold text-archin-navy font-body text-xs tracking-widest uppercase font-semibold">
+                        <span className="px-2 md:px-3 py-1 bg-archin-gold text-archin-navy font-body text-[10px] md:text-xs tracking-widest uppercase font-semibold">
                           {service.badge}
                         </span>
                       </div>
-                      <h3 className="font-heading text-2xl md:text-3xl font-light text-archin-cream mb-2 tracking-wide">
+                      <h3 className="font-heading text-[22px] md:text-3xl font-light text-archin-cream mb-1 md:mb-2 tracking-wide">
                         {service.title}
                       </h3>
-                      <p className="font-body text-xs text-archin-cream/65 leading-relaxed mb-4 max-w-sm">
+                      <p className="font-body text-xs text-archin-cream/80 leading-relaxed mb-3 md:mb-4 max-w-sm line-clamp-2 md:line-clamp-none">
                         {service.description}
                       </p>
-                      <span className="inline-flex items-center gap-2 text-archin-gold text-sm tracking-wider uppercase font-body font-medium group-hover:gap-3 transition-all duration-300">
+                      <span className="inline-flex items-center gap-2 text-archin-gold text-[14px] tracking-wider uppercase font-body font-medium group-hover:gap-3 transition-all duration-300">
                         View Projects
                         <i className="ri-arrow-right-line" />
                       </span>
@@ -166,25 +169,25 @@ export default function Services() {
           </div>
 
           {/* Other Services Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 md:gap-4">
             {otherServices.map((service, index) => (
               <Link
                 key={service.id}
                 to={service.link}
-                className={`group relative border border-archin-cream/10 hover:border-archin-gold/50 bg-archin-cream/5 p-7 transition-all duration-500 cursor-pointer ${
+                className={`group relative border border-archin-cream/10 hover:border-archin-gold/50 bg-archin-cream/5 p-5 md:p-7 transition-all duration-500 cursor-pointer ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
                 style={{ transitionDelay: `${500 + index * 80}ms` }}
               >
                 {/* Icon */}
-                <div className="w-11 h-11 flex items-center justify-center border border-archin-gold/30 text-archin-gold group-hover:bg-archin-gold group-hover:text-archin-navy group-hover:border-archin-gold transition-all duration-300 mb-5">
+                <div className="w-10 h-10 md:w-11 md:h-11 flex items-center justify-center border border-archin-gold/30 text-archin-gold group-hover:bg-archin-gold group-hover:text-archin-navy group-hover:border-archin-gold transition-all duration-300 mb-4 md:mb-5">
                   <i className={`${service.icon} text-lg`} />
                 </div>
 
-                <h3 className="font-heading text-lg font-light text-archin-cream group-hover:text-archin-gold transition-colors duration-300 mb-2 tracking-wide">
+                <h3 className="font-heading text-[18px] md:text-lg font-light text-archin-cream group-hover:text-archin-gold transition-colors duration-300 mb-2 tracking-wide">
                   {service.title}
                 </h3>
-                <p className="font-body text-xs text-archin-cream/50 leading-relaxed">
+                <p className="font-body text-xs text-archin-cream/50 leading-relaxed line-clamp-2 md:line-clamp-none">
                   {service.description}
                 </p>
 
