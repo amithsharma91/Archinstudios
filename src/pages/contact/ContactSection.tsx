@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 interface ContactInfoItemProps {
   icon: string;
@@ -34,23 +35,23 @@ function ContactInfoItem({ icon, title, lines, href, sublabel, delay }: ContactI
   const content = (
     <div
       ref={itemRef}
-      className={`flex items-start gap-5 p-6 bg-white/50 border border-archin-gold/20 transition-all duration-700 group hover:border-archin-gold/50 ${
+      className={`flex items-start gap-5 p-5 md:p-6 bg-white/50 border border-archin-gold/20 transition-all duration-700 group hover:border-archin-gold/50 ${
         isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
       }`}
     >
       {/* Icon */}
-      <div className="w-12 h-12 flex items-center justify-center bg-archin-gold/10 border border-archin-gold/30 flex-shrink-0 transition-all duration-300 group-hover:bg-archin-gold/20">
+      <div className="w-11 h-11 flex items-center justify-center bg-archin-gold/10 border border-archin-gold/30 flex-shrink-0 transition-all duration-300 group-hover:bg-archin-gold/20">
         <i className={`${icon} text-xl text-archin-gold`} />
       </div>
 
       {/* Content */}
-      <div className="flex-1">
+      <div className="flex-1 min-w-0">
         <span className="text-archin-gold font-body text-xs uppercase tracking-wider block mb-2">
           {title}
         </span>
         <div className="space-y-1">
           {lines.map((line, index) => (
-            <p key={index} className="font-body text-sm text-archin-navy">
+            <p key={index} className="font-body text-sm text-archin-navy break-words">
               {line}
             </p>
           ))}
@@ -78,6 +79,7 @@ function ContactInfoItem({ icon, title, lines, href, sublabel, delay }: ContactI
 export default function ContactSection() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const [searchParams] = useSearchParams();
 
   const [fullName, setFullName] = useState('');
   const [phone, setPhone] = useState('');
@@ -86,6 +88,24 @@ export default function ContactSection() {
   const [location, setLocation] = useState('');
   const [budget, setBudget] = useState('');
   const [brief, setBrief] = useState('');
+
+  // Pre-select service from URL query param
+  useEffect(() => {
+    const serviceParam = searchParams.get('service');
+    if (serviceParam) {
+      // Match against available services (case-insensitive partial match)
+      const matched = services.find(
+        (s) => s.toLowerCase() === serviceParam.toLowerCase() ||
+               s.toLowerCase().replace(/\s+/g, '+') === serviceParam.toLowerCase()
+      );
+      if (matched) {
+        setService(matched);
+      } else {
+        setService(serviceParam);
+      }
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -161,15 +181,15 @@ export default function ContactSection() {
   };
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-28 bg-archin-cream">
-      <div className="px-6 lg:px-8">
+    <section ref={sectionRef} className="py-10 md:py-20 lg:py-28 bg-archin-cream">
+      <div className="px-5 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
             {/* Left Column - Contact Details */}
             <div>
-              <div className={`mb-10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <span className="inline-block px-6 py-2 bg-archin-gold/10 border border-archin-gold/30 text-archin-gold font-body text-sm tracking-widest uppercase mb-6">Reach Out</span>
-                <h2 className="font-heading text-4xl md:text-5xl font-light text-archin-navy mb-4 tracking-wide">Contact Details</h2>
+              <div className={`mb-6 md:mb-10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                <span className="inline-block px-4 md:px-6 py-2 bg-archin-gold/10 border border-archin-gold/30 text-archin-gold font-body text-xs md:text-sm tracking-widest uppercase mb-4 md:mb-6">Reach Out</span>
+                <h2 className="font-heading text-[28px] md:text-4xl lg:text-5xl font-light text-archin-navy mb-4 tracking-wide">Contact Details</h2>
                 <div className="w-16 h-px bg-archin-gold" />
               </div>
               <div className="space-y-4">
@@ -181,14 +201,14 @@ export default function ContactSection() {
 
             {/* Right Column - WhatsApp Enquiry Form */}
             <div>
-              <div className={`mb-10 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <span className="inline-block px-6 py-2 bg-archin-gold/10 border border-archin-gold/30 text-archin-gold font-body text-sm tracking-widest uppercase mb-6">Send Enquiry</span>
-                <h2 className="font-heading text-4xl md:text-5xl font-light text-archin-navy mb-4 tracking-wide">WhatsApp Enquiry</h2>
+              <div className={`mb-6 md:mb-10 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                <span className="inline-block px-4 md:px-6 py-2 bg-archin-gold/10 border border-archin-gold/30 text-archin-gold font-body text-xs md:text-sm tracking-widest uppercase mb-4 md:mb-6">Send Enquiry</span>
+                <h2 className="font-heading text-[28px] md:text-4xl lg:text-5xl font-light text-archin-navy mb-4 tracking-wide">WhatsApp Enquiry</h2>
                 <div className="w-16 h-px bg-archin-gold" />
               </div>
 
-              <div className={`bg-white/50 border border-archin-gold/20 p-8 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <div className="space-y-6">
+              <div className={`bg-white/50 border border-archin-gold/20 p-5 md:p-8 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                <div className="space-y-5 md:space-y-6">
                   {/* Full Name */}
                   <div>
                     <label htmlFor="wa_fullName" className="block text-archin-grey font-body text-xs uppercase tracking-wider mb-2">Full Name</label>
@@ -202,30 +222,30 @@ export default function ContactSection() {
                     />
                   </div>
 
-                  {/* Phone Number */}
-                  <div>
-                    <label htmlFor="wa_phone" className="block text-archin-grey font-body text-xs uppercase tracking-wider mb-2">Phone Number</label>
-                    <input
-                      type="tel"
-                      id="wa_phone"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      className="w-full px-4 py-3 bg-archin-cream border border-archin-gold/30 text-archin-navy font-body text-sm focus:border-archin-gold focus:outline-none transition-colors duration-300"
-                      placeholder="Your phone number"
-                    />
-                  </div>
-
-                  {/* Email */}
-                  <div>
-                    <label htmlFor="wa_email" className="block text-archin-grey font-body text-xs uppercase tracking-wider mb-2">Email Address</label>
-                    <input
-                      type="email"
-                      id="wa_email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full px-4 py-3 bg-archin-cream border border-archin-gold/30 text-archin-navy font-body text-sm focus:border-archin-gold focus:outline-none transition-colors duration-300"
-                      placeholder="your@email.com"
-                    />
+                  {/* Phone + Email row on md+ */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
+                    <div>
+                      <label htmlFor="wa_phone" className="block text-archin-grey font-body text-xs uppercase tracking-wider mb-2">Phone Number</label>
+                      <input
+                        type="tel"
+                        id="wa_phone"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        className="w-full px-4 py-3 bg-archin-cream border border-archin-gold/30 text-archin-navy font-body text-sm focus:border-archin-gold focus:outline-none transition-colors duration-300"
+                        placeholder="Your phone number"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="wa_email" className="block text-archin-grey font-body text-xs uppercase tracking-wider mb-2">Email Address</label>
+                      <input
+                        type="email"
+                        id="wa_email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="w-full px-4 py-3 bg-archin-cream border border-archin-gold/30 text-archin-navy font-body text-sm focus:border-archin-gold focus:outline-none transition-colors duration-300"
+                        placeholder="your@email.com"
+                      />
+                    </div>
                   </div>
 
                   {/* Service Required */}
@@ -243,32 +263,32 @@ export default function ContactSection() {
                     </select>
                   </div>
 
-                  {/* Project Location */}
-                  <div>
-                    <label htmlFor="wa_location" className="block text-archin-grey font-body text-xs uppercase tracking-wider mb-2">Project Location</label>
-                    <input
-                      type="text"
-                      id="wa_location"
-                      value={location}
-                      onChange={(e) => setLocation(e.target.value)}
-                      className="w-full px-4 py-3 bg-archin-cream border border-archin-gold/30 text-archin-navy font-body text-sm focus:border-archin-gold focus:outline-none transition-colors duration-300"
-                      placeholder="Area and city"
-                    />
-                  </div>
-
-                  {/* Budget Range */}
-                  <div>
-                    <label htmlFor="wa_budget" className="block text-archin-grey font-body text-xs uppercase tracking-wider mb-2">Budget Range</label>
-                    <select
-                      id="wa_budget"
-                      value={budget}
-                      onChange={(e) => setBudget(e.target.value)}
-                      className="w-full px-4 py-3 bg-archin-cream border border-archin-gold/30 text-archin-navy font-body text-sm focus:border-archin-gold focus:outline-none transition-colors duration-300 appearance-none cursor-pointer"
-                      style={selectStyle}
-                    >
-                      <option value="">Select budget range</option>
-                      {budgetRanges.map((r) => <option key={r} value={r}>{r}</option>)}
-                    </select>
+                  {/* Location + Budget row on md+ */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
+                    <div>
+                      <label htmlFor="wa_location" className="block text-archin-grey font-body text-xs uppercase tracking-wider mb-2">Project Location</label>
+                      <input
+                        type="text"
+                        id="wa_location"
+                        value={location}
+                        onChange={(e) => setLocation(e.target.value)}
+                        className="w-full px-4 py-3 bg-archin-cream border border-archin-gold/30 text-archin-navy font-body text-sm focus:border-archin-gold focus:outline-none transition-colors duration-300"
+                        placeholder="Area and city"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="wa_budget" className="block text-archin-grey font-body text-xs uppercase tracking-wider mb-2">Budget Range</label>
+                      <select
+                        id="wa_budget"
+                        value={budget}
+                        onChange={(e) => setBudget(e.target.value)}
+                        className="w-full px-4 py-3 bg-archin-cream border border-archin-gold/30 text-archin-navy font-body text-sm focus:border-archin-gold focus:outline-none transition-colors duration-300 appearance-none cursor-pointer"
+                        style={selectStyle}
+                      >
+                        <option value="">Select budget range</option>
+                        {budgetRanges.map((r) => <option key={r} value={r}>{r}</option>)}
+                      </select>
+                    </div>
                   </div>
 
                   {/* Project Brief */}
