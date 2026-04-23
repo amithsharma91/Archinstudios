@@ -44,7 +44,7 @@ export default function RenovationProjectCard({
     >
       {/* Project Number */}
       <div className="flex items-center gap-4 mb-6">
-        <span className="font-display text-6xl lg:text-7xl text-archin-charcoal font-semibold">
+        <span className="font-display text-5xl lg:text-7xl text-archin-charcoal font-semibold">
           {String(index + 1).padStart(2, '0')}
         </span>
         <div className="flex-1 h-px bg-gradient-to-r from-archin-gold/50 to-transparent" />
@@ -52,7 +52,7 @@ export default function RenovationProjectCard({
 
       {/* Project Title */}
       <div className="mb-8">
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-archin-cream">
+        <h2 className="font-display text-2xl md:text-4xl lg:text-5xl text-archin-cream">
           {title}
         </h2>
       </div>
