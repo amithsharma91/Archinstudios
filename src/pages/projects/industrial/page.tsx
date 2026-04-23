@@ -42,11 +42,11 @@ export default function IndustrialProjects() {
         <Hero />
 
         {/* Showcase Gallery */}
-        <section className="section-padding py-20 lg:py-28">
+        <section className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 py-14 lg:py-28">
           <div className="max-w-6xl mx-auto">
-            <div className="max-w-3xl mb-16">
+            <div className="max-w-3xl mb-10 md:mb-16">
               <span className="label mb-4 block">Our Work</span>
-              <p className="body-lg">
+              <p className="body-lg text-base md:text-xl">
                 ARCHIN designs industrial facilities that balance structural integrity with
                 operational efficiency. Our warehouses, factories and large-scale industrial
                 complexes are engineered to meet demanding functional requirements while
@@ -59,15 +59,15 @@ export default function IndustrialProjects() {
         </section>
 
         {/* Studio Location Section */}
-        <section className="section-padding py-20 lg:py-24 bg-archin-cream">
+        <section className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 py-14 lg:py-24 bg-archin-cream">
           <div className="max-w-4xl mx-auto text-center">
             <span className="inline-block px-6 py-2 bg-archin-gold/15 border border-archin-gold/40 text-archin-gold font-body text-sm tracking-widest uppercase mb-6">
               Come See Us
             </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-light text-archin-navy mb-6 tracking-wide">
+            <h2 className="font-display text-2xl md:text-4xl lg:text-5xl font-light text-archin-navy mb-6 tracking-wide">
               Visit Our Studio
             </h2>
-            <p className="font-body text-lg text-archin-navy/70 leading-relaxed max-w-xl mx-auto mb-10">
+            <p className="font-body text-base md:text-lg text-archin-navy/70 leading-relaxed max-w-xl mx-auto mb-10">
               Come see our work in person at the ARCHIN Studio in Yelahanka, Bangalore.
             </p>
             <a
@@ -83,17 +83,17 @@ export default function IndustrialProjects() {
         </section>
 
         {/* CTA Section */}
-        <section className="section-padding py-20 bg-archin-charcoal">
+        <section className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 py-14 md:py-20 bg-archin-charcoal">
           <div className="max-w-4xl mx-auto text-center">
             <span className="label mb-4 block">Start Your Project</span>
-            <h2 className="heading-md text-archin-cream mb-6">
+            <h2 className="font-heading text-2xl md:text-4xl lg:text-5xl font-light tracking-wide text-archin-cream mb-6">
               Ready to Build Your Industrial Facility?
             </h2>
-            <p className="body-lg max-w-2xl mx-auto mb-10">
+            <p className="body-lg text-base md:text-xl max-w-2xl mx-auto mb-8 md:mb-10">
               From warehouses to large-scale manufacturing plants, we engineer industrial
               spaces that are built for performance, safety and long-term durability.
             </p>
-            <a href="/contact" className="btn-primary whitespace-nowrap inline-block cursor-pointer">
+            <a href="/contact?service=Industrial+Architecture" className="btn-primary whitespace-nowrap inline-block cursor-pointer">
               Discuss Your Project
             </a>
           </div>
