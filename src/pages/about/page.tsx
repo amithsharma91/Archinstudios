@@ -1,65 +1,61 @@
-import { useEffect, useState } from 'react';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import Hero from './Hero';
+import ArchitectProfile from './ArchitectProfile';
+import Education from './Education';
+import StudioStory from './StudioStory';
+import StatsBar from './StatsBar';
+import CTASection from './CTASection';
+import SEOMeta from '../../components/SEOMeta';
 
-export default function Hero() {
-  const [isLoaded, setIsLoaded] = useState(false);
+const BASE_URL = 'https://archinstudios.in';
 
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
+const aboutSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About ARCHIN Studio',
+    url: `${BASE_URL}/about`,
+    description:
+      'Learn about ARCHIN Studio – a team of Masters-level qualified architects with 19+ years of experience delivering exceptional architecture in Bengaluru.',
+    mainEntity: {
+      '@type': 'LocalBusiness',
+      name: 'ARCHIN Studio',
+      foundingDate: '2007',
+      telephone: '+919980377877',
+      email: 'Thearchinstudios@gmail.com',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Building No 21, ARCHIN Building, Nehru Nagar Main Road',
+        addressLocality: 'Jakkur, Yelahanka',
+        addressRegion: 'Karnataka',
+        postalCode: '560064',
+        addressCountry: 'IN',
+      },
+    },
+  },
+];
 
+export default function About() {
   return (
-    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-archin-navy">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="https://readdy.ai/api/search-image?query=elegant%20modern%20architecture%20studio%20interior%20warm%20ambient%20lighting%20minimalist%20sophisticated%20workspace%20architectural%20models%20display%20with%20golden%20warm%20tones&width=1920&height=800&seq=about-hero-navy-1&orientation=landscape"
-          alt="Architecture Studio"
-          className="w-full h-full object-cover opacity-45"
-        />
-        {/* Navy Overlay */}
-        <div className="absolute inset-0 bg-archin-navy/55" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 px-6 lg:px-8 w-full pt-32 pb-20">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Label */}
-          <div
-            className={`transition-all duration-700 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            <span className="inline-block px-6 py-2 bg-archin-gold/10 border border-archin-gold/30 text-archin-gold font-body text-sm tracking-widest uppercase mb-6">
-              Learn Our Story
-            </span>
-          </div>
-
-          {/* Main Heading */}
-          <h1
-            className={`font-heading text-5xl md:text-6xl lg:text-7xl font-light text-archin-cream mb-6 tracking-wide transition-all duration-700 delay-100 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            About Us
-          </h1>
-
-          {/* Subtitle */}
-          <p
-            className={`font-heading text-2xl md:text-3xl font-light text-archin-gold tracking-wide transition-all duration-700 delay-200 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            The Mind Behind ARCHIN
-          </p>
-
-          {/* Decorative Line */}
-          <div
-            className={`w-24 h-px bg-gradient-to-r from-transparent via-archin-gold to-transparent mx-auto mt-8 transition-all duration-700 delay-300 ${
-              isLoaded ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'
-            }`}
-          />
-        </div>
-      </div>
-    </section>
+    <div className="min-h-screen bg-archin-cream font-body">
+      <SEOMeta
+        title="ARCHIN Studio | Architects in Bengaluru Since 2007"
+        description="Meet the team behind ARCHIN Studio. 19+ years of architectural excellence in Bengaluru. Masters-level qualified architects delivering innovative design solutions across Karnataka."
+        keywords="about ARCHIN architects, architecture studio Bengaluru, experienced architects Karnataka, ARCHIN Studio team"
+        canonicalPath="/about"
+        schema={aboutSchema}
+      />
+      <Navbar />
+      <main>
+        <Hero />
+        <ArchitectProfile />
+        <Education />
+        <StudioStory />
+        <StatsBar />
+        <CTASection />
+      </main>
+      <Footer />
+    </div>
   );
 }
