@@ -51,34 +51,34 @@ export default function ProjectSection({
   return (
     <section
       ref={sectionRef}
-      className={`section-padding py-20 lg:py-28 ${reversed ? 'bg-archin-charcoal' : 'bg-archin-black'}`}
+      className={`section-padding py-10 md:py-20 lg:py-28 ${reversed ? 'bg-archin-charcoal' : 'bg-archin-black'}`}
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div
-          className={`mb-12 lg:mb-16 transition-all duration-700 ${
+          className={`mb-8 md:mb-12 lg:mb-16 transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <span className="label mb-4 block">{title}</span>
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+          <span className="label mb-3 md:mb-4 block">{title}</span>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 md:gap-6">
             <div className="max-w-2xl">
-              <h2 className="heading-md text-archin-cream mb-4">{title}</h2>
-              <p className="body-md">{description}</p>
+              <h2 className="font-heading text-[28px] md:text-4xl lg:text-5xl font-light text-archin-cream tracking-wide mb-3 md:mb-4">{title}</h2>
+              <p className="font-body text-[14px] md:text-base text-archin-grey leading-relaxed">{description}</p>
             </div>
           </div>
         </div>
 
         {/* Decorative Line */}
         <div
-          className={`w-full h-px bg-gradient-to-r from-archin-gold/50 via-archin-gold/20 to-transparent mb-12 transition-all duration-700 delay-100 ${
+          className={`w-full h-px bg-gradient-to-r from-archin-gold/50 via-archin-gold/20 to-transparent mb-8 md:mb-12 transition-all duration-700 delay-100 ${
             isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'
           }`}
           style={{ transformOrigin: 'left' }}
         />
 
         {/* Project Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 lg:gap-12 mb-8 md:mb-12">
           {projects.map((project, index) => (
             <ProjectCard
               key={project.id}
