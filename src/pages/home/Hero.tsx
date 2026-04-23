@@ -31,7 +31,7 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 px-6 lg:px-16 w-full py-32">
+      <div className="relative z-10 px-5 lg:px-16 w-full py-20 md:py-32">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-3xl">
             {/* Label */}
@@ -40,9 +40,9 @@ export default function Hero() {
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
-              <span className="inline-flex items-center gap-3 mb-8">
+              <span className="inline-flex items-center gap-3 mb-6 md:mb-8">
                 <span className="w-8 h-px bg-archin-gold" />
-                <span className="font-body text-archin-gold text-xs tracking-[0.3em] uppercase">
+                <span className="font-body text-archin-gold text-[10px] md:text-xs tracking-[0.3em] uppercase">
                   Architecture &amp; Interior Design Studio — Bengaluru
                 </span>
               </span>
@@ -50,7 +50,7 @@ export default function Hero() {
 
             {/* Main Heading */}
             <h1
-              className={`font-heading text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-archin-cream mb-6 tracking-wide leading-[1.05] transition-all duration-700 delay-100 ${
+              className={`font-heading text-[36px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-archin-cream mb-5 md:mb-6 tracking-wide leading-[1.05] transition-all duration-700 delay-100 ${
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
@@ -63,7 +63,7 @@ export default function Hero() {
 
             {/* Tagline */}
             <p
-              className={`font-body text-base md:text-lg text-archin-cream/75 max-w-xl mb-10 leading-relaxed transition-all duration-700 delay-200 ${
+              className={`font-body text-[14px] md:text-base lg:text-lg text-archin-cream/75 max-w-xl mb-8 md:mb-10 leading-relaxed transition-all duration-700 delay-200 ${
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
@@ -72,20 +72,20 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div
-              className={`flex flex-col sm:flex-row items-start gap-4 transition-all duration-700 delay-300 ${
+              className={`flex flex-col sm:flex-row items-stretch sm:items-start gap-3 md:gap-4 transition-all duration-700 delay-300 ${
                 isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
               <Link
                 to="/projects"
-                className="px-8 py-4 bg-archin-gold text-archin-navy font-body font-semibold text-sm tracking-widest uppercase hover:bg-archin-gold/90 transition-all duration-300 transform hover:scale-105 whitespace-nowrap cursor-pointer inline-flex items-center gap-2"
+                className="px-6 md:px-8 py-3.5 md:py-4 bg-archin-gold text-archin-navy font-body font-semibold text-sm tracking-widest uppercase hover:bg-archin-gold/90 transition-all duration-300 transform hover:scale-105 whitespace-nowrap cursor-pointer inline-flex items-center justify-center gap-2"
               >
                 Explore Our Work
                 <i className="ri-arrow-right-line" />
               </Link>
               <Link
                 to="/contact"
-                className="px-8 py-4 bg-transparent border border-archin-cream/40 text-archin-cream font-body font-medium text-sm tracking-widest uppercase hover:border-archin-gold hover:text-archin-gold transition-all duration-300 whitespace-nowrap cursor-pointer"
+                className="px-6 md:px-8 py-3.5 md:py-4 bg-transparent border border-archin-cream/40 text-archin-cream font-body font-medium text-sm tracking-widest uppercase hover:border-archin-gold hover:text-archin-gold transition-all duration-300 whitespace-nowrap cursor-pointer text-center"
               >
                 Start Your Project
               </Link>
@@ -94,39 +94,9 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Bottom Stats Strip */}
-      <div
-        className={`absolute bottom-0 left-0 right-0 z-10 transition-all duration-700 delay-500 ${
-          isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-        }`}
-      >
-        <div className="bg-archin-navy/80 backdrop-blur-sm border-t border-archin-gold/20 px-6 lg:px-16 py-5">
-          <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { value: '19+', label: 'Years Experience' },
-              { value: '200+', label: 'Projects Delivered' },
-              { value: 'Karnataka', label: 'Primary Region' },
-              { value: '5★', label: 'Google Rating' },
-            ].map((stat) => (
-              <div key={stat.label} className="flex items-center gap-3">
-                <div className="w-px h-8 bg-archin-gold/40 hidden md:block" />
-                <div>
-                  <div className="font-heading text-xl text-archin-gold font-light tracking-wide">
-                    {stat.value}
-                  </div>
-                  <div className="font-body text-archin-cream/50 text-xs tracking-widest uppercase">
-                    {stat.label}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Scroll Indicator */}
       <div
-        className={`absolute bottom-28 right-10 transition-all duration-700 delay-600 hidden lg:flex flex-col items-center gap-2 ${
+        className={`absolute bottom-28 right-6 lg:right-10 transition-all duration-700 delay-600 hidden lg:flex flex-col items-center gap-2 ${
           isLoaded ? 'opacity-100' : 'opacity-0'
         }`}
       >
