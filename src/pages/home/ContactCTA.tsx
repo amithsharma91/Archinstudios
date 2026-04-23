@@ -35,44 +35,44 @@ export default function ContactCTA() {
         <div className="absolute inset-0 bg-archin-navy/88" />
       </div>
 
-      <div className="relative z-10 px-6 lg:px-16 py-24 md:py-32">
+      <div className="relative z-10 px-5 lg:px-16 py-10 md:py-24 lg:py-32">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
             {/* Left: CTA Text */}
             <div
               className={`transition-all duration-1000 ${
                 isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
               }`}
             >
-              <span className="inline-flex items-center gap-3 mb-8">
+              <span className="inline-flex items-center gap-3 mb-6 md:mb-8">
                 <span className="w-8 h-px bg-archin-gold" />
                 <span className="font-body text-archin-gold text-xs tracking-[0.3em] uppercase">
                   Start Your Project
                 </span>
               </span>
 
-              <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-light text-archin-cream mb-6 tracking-wide leading-tight">
+              <h2 className="font-heading text-[28px] md:text-5xl lg:text-6xl font-light text-archin-cream mb-4 md:mb-6 tracking-wide leading-tight">
                 Ready to Transform
                 <br />
                 <span className="text-archin-gold italic">Your Space?</span>
               </h2>
 
-              <p className="font-body text-base text-archin-cream/70 max-w-lg mb-10 leading-relaxed">
+              <p className="font-body text-[14px] md:text-base text-archin-cream/70 max-w-lg mb-8 md:mb-10 leading-relaxed">
                 Whether you're planning an industrial facility, a new home, or a renovation,
                 we'd love to hear about your project. Let's create something extraordinary together.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-archin-gold text-archin-navy font-body font-semibold text-sm tracking-widest uppercase hover:bg-archin-gold/90 transition-all duration-300 transform hover:scale-105 whitespace-nowrap cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 md:py-4 bg-archin-gold text-archin-navy font-body font-semibold text-sm tracking-widest uppercase hover:bg-archin-gold/90 transition-all duration-300 transform hover:scale-105 whitespace-nowrap cursor-pointer"
                 >
                   Get In Touch
                   <i className="ri-arrow-right-line" />
                 </Link>
                 <Link
                   to="/projects"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-archin-cream/30 text-archin-cream font-body font-medium text-sm tracking-widest uppercase hover:border-archin-gold hover:text-archin-gold transition-all duration-300 whitespace-nowrap cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 md:py-4 border border-archin-cream/30 text-archin-cream font-body font-medium text-sm tracking-widest uppercase hover:border-archin-gold hover:text-archin-gold transition-all duration-300 whitespace-nowrap cursor-pointer"
                 >
                   View Our Work
                 </Link>
@@ -85,7 +85,7 @@ export default function ContactCTA() {
                 isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
               }`}
             >
-              <div className="border border-archin-gold/20 bg-archin-cream/5 backdrop-blur-sm p-8 space-y-6">
+              <div className="border border-archin-gold/20 bg-archin-cream/5 backdrop-blur-sm p-5 md:p-8 space-y-4 md:space-y-6">
                 {[
                   {
                     icon: 'ri-phone-line',
@@ -114,15 +114,15 @@ export default function ContactCTA() {
                 ].map((item, i) => (
                   <div
                     key={item.label}
-                    className={`flex items-start gap-4 pb-6 border-b border-archin-gold/10 last:border-b-0 last:pb-0 transition-all duration-700 ${
+                    className={`flex items-start gap-3 md:gap-4 pb-6 border-b border-archin-gold/10 last:border-b-0 last:pb-0 transition-all duration-700 ${
                       isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                     }`}
                     style={{ transitionDelay: `${400 + i * 100}ms` }}
                   >
-                    <div className="w-10 h-10 flex items-center justify-center border border-archin-gold/30 text-archin-gold flex-shrink-0">
-                      <i className={`${item.icon} text-base`} />
+                    <div className="w-9 h-9 md:w-10 md:h-10 flex items-center justify-center border border-archin-gold/30 text-archin-gold flex-shrink-0">
+                      <i className={`${item.icon} text-sm md:text-base`} />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <div className="font-body text-archin-gold/70 text-xs tracking-widest uppercase mb-1">
                         {item.label}
                       </div>
@@ -131,7 +131,7 @@ export default function ContactCTA() {
                           href={item.href}
                           target={item.href.startsWith('http') ? '_blank' : undefined}
                           rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                          className="font-body text-archin-cream text-sm hover:text-archin-gold transition-colors duration-300 cursor-pointer"
+                          className="font-body text-archin-cream text-sm hover:text-archin-gold transition-colors duration-300 cursor-pointer break-words"
                         >
                           {item.value}
                         </a>
