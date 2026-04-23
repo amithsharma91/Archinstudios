@@ -6,9 +6,9 @@ export default function Footer() {
       {/* Top accent line */}
       <div className="h-px bg-gradient-to-r from-transparent via-archin-gold/50 to-transparent" />
 
-      <div className="px-6 lg:px-16 py-16 lg:py-20">
+      <div className="px-5 lg:px-16 py-10 lg:py-20">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8">
             {/* Column 1: Logo and Description */}
             <div className="lg:col-span-1 space-y-6">
               <Link to="/" className="inline-block group">
