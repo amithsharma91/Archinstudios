@@ -79,27 +79,27 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 bg-archin-cream">
-      <div className="px-6 lg:px-8">
+    <section ref={sectionRef} className="py-10 md:py-24 lg:py-32 bg-archin-cream">
+      <div className="px-5 lg:px-8">
 
         {/* Section Header */}
-        <div className="max-w-3xl mb-16 md:mb-20 text-center mx-auto">
+        <div className="max-w-3xl mb-10 md:mb-20 text-center mx-auto">
           <span
-            className={`inline-block px-6 py-2 bg-archin-gold/10 border border-archin-gold/30 text-archin-gold font-body text-sm tracking-widest uppercase mb-6 transition-all duration-700 ${
+            className={`inline-block px-4 md:px-6 py-2 bg-archin-gold/10 border border-archin-gold/30 text-archin-gold font-body text-xs md:text-sm tracking-widest uppercase mb-4 md:mb-6 transition-all duration-700 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
             Client Stories
           </span>
           <h2
-            className={`font-heading text-4xl md:text-5xl lg:text-6xl font-light text-archin-navy mb-4 tracking-wide transition-all duration-700 delay-100 ${
+            className={`font-heading text-[28px] md:text-5xl lg:text-6xl font-light text-archin-navy mb-3 md:mb-4 tracking-wide transition-all duration-700 delay-100 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
             What Our Clients Say
           </h2>
           <p
-            className={`font-body text-sm text-archin-gold tracking-widest uppercase transition-all duration-700 delay-200 ${
+            className={`font-body text-xs md:text-sm text-archin-gold tracking-widest uppercase transition-all duration-700 delay-200 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
@@ -108,11 +108,11 @@ export default function Testimonials() {
         </div>
 
         {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-7xl mx-auto">
           {reviews.map((review, index) => (
             <div
               key={review.id}
-              className={`relative flex flex-col bg-white/60 border border-archin-gold/20 hover:border-archin-gold/50 p-8 transition-all duration-700 group ${
+              className={`relative flex flex-col bg-white/60 border border-archin-gold/20 hover:border-archin-gold/50 p-5 md:p-8 transition-all duration-700 group ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: `${300 + index * 150}ms` }}
@@ -170,7 +170,7 @@ export default function Testimonials() {
 
         {/* View All Google Reviews CTA */}
         <div
-          className={`flex flex-col sm:flex-row items-center justify-center gap-4 mt-14 transition-all duration-700 delay-700 ${
+          className={`flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mt-10 md:mt-14 transition-all duration-700 delay-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
