@@ -47,12 +47,12 @@ export default function ResidentialProjects() {
         <Hero />
 
         {/* Projects List */}
-        <section className="section-padding py-20 lg:py-28">
+        <section className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 py-14 lg:py-28">
           <div className="max-w-6xl mx-auto">
             {/* Section Intro */}
-            <div className="max-w-3xl mb-16">
+            <div className="max-w-3xl mb-10 md:mb-16">
               <span className="label mb-4 block">Our Work</span>
-              <p className="body-lg">
+              <p className="body-lg text-base md:text-xl">
                 Each residential project we undertake is a unique journey. From contemporary villas
                 to urban apartments, we craft homes that reflect the personalities and aspirations
                 of those who inhabit them.
@@ -60,7 +60,7 @@ export default function ResidentialProjects() {
             </div>
 
             {/* Projects */}
-            <div className="space-y-20 lg:space-y-28">
+            <div className="space-y-14 lg:space-y-28">
               {residentialProjects.map((project, index) => (
                 <ProjectCard
                   key={project.id}
@@ -76,12 +76,12 @@ export default function ResidentialProjects() {
         </section>
 
         {/* Completed Works Gallery */}
-        <section className="section-padding py-20 lg:py-28 bg-archin-charcoal">
+        <section className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 py-14 lg:py-28 bg-archin-charcoal">
           <div className="max-w-6xl mx-auto">
-            <div className="max-w-3xl mb-14">
+            <div className="max-w-3xl mb-10 md:mb-14">
               <span className="label mb-4 block">Completed Works</span>
               <h2 className="heading-md text-archin-cream mb-4">Built &amp; Delivered</h2>
-              <p className="body-lg">
+              <p className="body-lg text-base md:text-xl">
                 A curated glimpse into residential spaces we have brought to life — where design
                 intent meets crafted reality.
               </p>
@@ -91,17 +91,17 @@ export default function ResidentialProjects() {
         </section>
 
         {/* CTA Section */}
-        <section className="section-padding py-20 bg-archin-black">
+        <section className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 py-14 md:py-20 bg-archin-black">
           <div className="max-w-4xl mx-auto text-center">
             <span className="label mb-4 block">Start Your Journey</span>
-            <h2 className="heading-md text-archin-cream mb-6">
+            <h2 className="font-heading text-2xl md:text-4xl lg:text-5xl font-light tracking-wide text-archin-cream mb-6">
               Have a Vision for Your Dream Home?
             </h2>
-            <p className="body-lg max-w-2xl mx-auto mb-10">
+            <p className="body-lg text-base md:text-xl max-w-2xl mx-auto mb-8 md:mb-10">
               Let&apos;s collaborate to create a residence that perfectly captures your lifestyle
               and stands as a testament to timeless design.
             </p>
-            <a href="/contact" className="btn-primary whitespace-nowrap inline-block cursor-pointer">
+            <a href="/contact?service=Residential+Architecture" className="btn-primary whitespace-nowrap inline-block cursor-pointer">
               Discuss Your Project
             </a>
           </div>
