@@ -38,12 +38,12 @@ export default function RenovationProjects() {
         <Hero />
 
         {/* Projects List */}
-        <section className="section-padding py-20 lg:py-28">
+        <section className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 py-14 lg:py-28">
           <div className="max-w-6xl mx-auto">
             {/* Section Intro */}
-            <div className="max-w-3xl mb-16">
+            <div className="max-w-3xl mb-10 md:mb-16">
               <span className="label mb-4 block">Our Work</span>
-              <p className="body-lg">
+              <p className="body-lg text-base md:text-xl">
                 We transform outdated and worn spaces into modern, functional environments while
                 preserving the soul and character of the original structure. Every renovation
                 project is approached with fresh vision and precise execution.
@@ -51,7 +51,7 @@ export default function RenovationProjects() {
             </div>
 
             {/* Projects */}
-            <div className="space-y-20 lg:space-y-28">
+            <div className="space-y-14 lg:space-y-28">
               {renovationProjects.map((project, index) => (
                 <RenovationProjectCard
                   key={project.id}
@@ -66,17 +66,17 @@ export default function RenovationProjects() {
         </section>
 
         {/* CTA Section */}
-        <section className="section-padding py-20 bg-archin-charcoal">
+        <section className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 py-14 md:py-20 bg-archin-charcoal">
           <div className="max-w-4xl mx-auto text-center">
             <span className="label mb-4 block">Reimagine Your Space</span>
-            <h2 className="heading-md text-archin-cream mb-6">
+            <h2 className="font-heading text-2xl md:text-4xl lg:text-5xl font-light tracking-wide text-archin-cream mb-6">
               Ready to Transform Your Existing Space?
             </h2>
-            <p className="body-lg max-w-2xl mx-auto mb-10">
+            <p className="body-lg text-base md:text-xl max-w-2xl mx-auto mb-8 md:mb-10">
               Whether it&apos;s a family home or a commercial property, let us breathe new life
               into your space with thoughtful renovation design and expert execution.
             </p>
-            <a href="/contact" className="btn-primary whitespace-nowrap inline-block cursor-pointer">
+            <a href="/contact?service=Renovation" className="btn-primary whitespace-nowrap inline-block cursor-pointer">
               Discuss Your Renovation
             </a>
           </div>
