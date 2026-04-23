@@ -42,14 +42,14 @@ export default function Navbar() {
           : 'bg-archin-navy/95 backdrop-blur-sm border-b border-archin-gold/10'
       }`}
     >
-      <div className="px-6 lg:px-10">
-        <div className="flex justify-between items-center h-20">
+      <div className="px-4 lg:px-10">
+        <div className="flex justify-between items-center h-[70px] lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center group flex-shrink-0">
             <img
               src="https://storage.readdy-site.link/project_files/96a3b98c-9790-4aa6-b897-2e38de9e112e/9191050d-0e23-44a6-bbec-0b423155b8de_Screenshot_2026-03-21-21-33-43-944_com.microsoft.office.word-removebg-preview-removebg-preview.png?v=1a63685f458eda23f008e57fe87b731b"
               alt="ARCHIN Architecture and Interiors Studio Logo"
-              className="h-12 w-auto object-contain transform group-hover:scale-105 transition-transform duration-300"
+              className="h-11 lg:h-12 w-auto max-w-[140px] lg:max-w-none object-contain transform group-hover:scale-105 transition-transform duration-300"
             />
           </Link>
 
