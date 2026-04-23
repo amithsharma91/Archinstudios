@@ -53,11 +53,11 @@ export default function InteriorProjects() {
         <Hero />
 
         {/* Showcase Gallery */}
-        <section className="section-padding py-20 lg:py-28">
+        <section className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 py-14 lg:py-28">
           <div className="max-w-6xl mx-auto">
-            <div className="max-w-3xl mb-16">
+            <div className="max-w-3xl mb-10 md:mb-16">
               <span className="label mb-4 block">Our Work</span>
-              <p className="body-lg">
+              <p className="body-lg text-base md:text-xl">
                 Interior design is the soul of a space. We transform ordinary rooms into
                 extraordinary experiences, curating every element to reflect the unique
                 personality and lifestyle of those who live within.
@@ -69,17 +69,17 @@ export default function InteriorProjects() {
         </section>
 
         {/* CTA Section */}
-        <section className="section-padding py-20 bg-archin-charcoal">
+        <section className="px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 py-14 md:py-20 bg-archin-charcoal">
           <div className="max-w-4xl mx-auto text-center">
             <span className="label mb-4 block">Transform Your Space</span>
-            <h2 className="heading-md text-archin-cream mb-6">
+            <h2 className="font-heading text-2xl md:text-4xl lg:text-5xl font-light tracking-wide text-archin-cream mb-6">
               Ready to Redefine Your Interior?
             </h2>
-            <p className="body-lg max-w-2xl mx-auto mb-10">
+            <p className="body-lg text-base md:text-xl max-w-2xl mx-auto mb-8 md:mb-10">
               Let us help you create an interior that not only looks extraordinary but
               feels authentically you. Every detail matters.
             </p>
-            <a href="/contact" className="btn-primary whitespace-nowrap inline-block">
+            <a href="/contact?service=Interior+Design" className="btn-primary whitespace-nowrap inline-block">
               Start Your Transformation
             </a>
           </div>
