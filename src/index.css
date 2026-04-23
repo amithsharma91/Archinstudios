@@ -5,6 +5,12 @@
 @tailwind utilities;
 
 @layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -23,6 +29,35 @@
   
   ::selection {
     @apply bg-archin-gold/30 text-archin-navy;
+  }
+
+  /* ── Mobile global fixes (max-width: 768px) ── */
+  @media (max-width: 768px) {
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+
+    /* Prevent any element from causing horizontal scroll */
+    section,
+    div,
+    header,
+    footer,
+    nav,
+    main {
+      max-width: 100%;
+    }
+
+    /* Mobile section spacing */
+    section {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+    }
+
+    /* Mobile heading sizes */
+    .font-heading {
+      word-break: break-word;
+    }
   }
 }
 
